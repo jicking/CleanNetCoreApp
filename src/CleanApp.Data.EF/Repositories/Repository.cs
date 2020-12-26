@@ -30,6 +30,7 @@ namespace CleanApp.Data.EF.Repositories
 
             try
             {
+                entity.Id = new Guid();
                 await db.AddAsync(entity);
                 await db.SaveChangesAsync();
 
