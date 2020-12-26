@@ -1,5 +1,6 @@
 using CleanApp.Data.EF;
 using CleanApp.IOC;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -32,13 +33,16 @@ namespace CleanApp.WebApi
             services.AddDbContext<CleanAppContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddMvc().AddFluentValidation(fv => {
+                fv.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
+            });
+
             RegisterServices(services);
         }
 
-        private static void RegisterServices(IServiceCollection services)
-        {
+        private static void RegisterServices(IServiceCollection services) =>
             DependencyContainer.RegisterServices(services);
-        }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

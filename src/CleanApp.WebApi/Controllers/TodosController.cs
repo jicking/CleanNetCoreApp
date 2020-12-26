@@ -41,6 +41,11 @@ namespace CleanApp.WebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<TodoItem>> Post([FromBody] TodoItem todo)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var result = await service.AddAsync(todo);
             return Ok(result);
         }
