@@ -14,7 +14,7 @@ namespace CleanApp.IOC
         public static void RegisterServices(IServiceCollection services)
         {
             //.Application
-            services.AddScoped<ITodoService, TodoServices>();
+            services.AddScoped<ITodoService, TodoService>();
 
             //.Domain | .Data
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));

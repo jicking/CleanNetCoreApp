@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace CleanApp.Application.Services
 {
-    public class TodoServices : ITodoService
+    public class TodoService : ITodoService
     {
         readonly IRepository<TodoItem> repository;
 
-        public TodoServices(IRepository<TodoItem> repository) => this.repository = repository;
+        public TodoService(IRepository<TodoItem> repository) => this.repository = repository;
 
 
         //QUERIES
