@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanApp.Application\CleanApp.Application.csproj" />
+    <ProjectReference Include="..\CleanApp.Data.EF\CleanApp.Data.EF.csproj" />
+  </ItemGroup>
+
+</Project>
