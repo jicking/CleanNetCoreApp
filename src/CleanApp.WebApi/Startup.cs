@@ -1,5 +1,8 @@
+using CleanApp.Data.EF;
+using CleanApp.IOC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +28,16 @@ namespace CleanApp.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanApp.WebApi", Version = "v1" });
             });
+
+            services.AddDbContext<CleanAppContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            RegisterServices(services);
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

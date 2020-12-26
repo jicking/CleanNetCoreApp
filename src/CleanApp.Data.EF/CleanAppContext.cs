@@ -8,6 +8,10 @@ namespace CleanApp.Data.EF
 {
     public class CleanAppContext: DbContext
     {
+
+        public CleanAppContext(DbContextOptions<CleanAppContext> options) :base(options) { }
+
+
         public DbSet<TodoItem> TodoItems { get; set; }
 
     }

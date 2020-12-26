@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\CleanApp.IOC\CleanApp.IOC.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,7 +9,7 @@ using System.Text;
 
 namespace CleanApp.IOC
 {
-    class DependencyContainer
+    public class DependencyContainer
     {
         public static void RegisterServices(IServiceCollection services)
         {
