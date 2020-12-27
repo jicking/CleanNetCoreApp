@@ -13,6 +13,7 @@ namespace CleanApp.WebApi
 {
     public class Startup
     {
+        const string CORS_POLICY_ALLOW_ALL = "CORS_POLICY_ALLOW_ALL";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -37,6 +38,12 @@ namespace CleanApp.WebApi
                 fv.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: CORS_POLICY_ALLOW_ALL, builder =>
+                                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
+
             RegisterServices(services);
         }
 
@@ -57,6 +64,8 @@ namespace CleanApp.WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(CORS_POLICY_ALLOW_ALL);
 
             app.UseAuthorization();
 
