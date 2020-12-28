@@ -1,4 +1,4 @@
-# CleanNetCoreApp
+# Asp.Net Core Clean App Template
 A simple clean ASP.NET Core template. 
 
 ## Download latest release
