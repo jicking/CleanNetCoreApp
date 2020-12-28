@@ -1,2 +1,2 @@
 # CleanNetCoreApp
-A simple CLEAN .Net Core application template
+A simple clean ASP.NET Core template. 
