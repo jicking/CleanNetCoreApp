@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
-COPY ["src/CleanApp.WebApi/CleanApp.WebApi.csproj", "src/CleanApp.WebApi/"]
-RUN dotnet restore "src/CleanApp.WebApi/CleanApp.WebApi.csproj"
+COPY ["src/$ext_safeprojectname$.WebApi/$ext_safeprojectname$.WebApi.csproj", "src/$ext_safeprojectname$.WebApi/"]
+RUN dotnet restore "src/$ext_safeprojectname$.WebApi/$ext_safeprojectname$.WebApi.csproj"
 COPY . .
-WORKDIR "/src/src/CleanApp.WebApi"
-RUN dotnet build "CleanApp.WebApi.csproj" -c Release -o /app/build
+WORKDIR "/src/src/$ext_safeprojectname$.WebApi"
+RUN dotnet build "$ext_safeprojectname$.WebApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "CleanApp.WebApi.csproj" -c Release -o /app/publish
+RUN dotnet publish "$ext_safeprojectname$.WebApi.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "CleanApp.WebApi.dll"]
+ENTRYPOINT ["dotnet", "$ext_safeprojectname$.WebApi.dll"]

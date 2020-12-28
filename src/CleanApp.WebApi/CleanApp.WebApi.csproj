@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanApp.IOC\CleanApp.IOC.csproj" />
+    <ProjectReference Include="..\$ext_safeprojectname$.IOC\$ext_safeprojectname$.IOC.csproj" />
   </ItemGroup>
 
 </Project>

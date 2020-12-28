@@ -1,10 +1,10 @@
-﻿using CleanApp.Domain.Models;
+﻿using $ext_safeprojectname$.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanApp.Application.Abstractions
+namespace $ext_safeprojectname$.Application.Abstractions
 {
     public interface ITodoService
     {

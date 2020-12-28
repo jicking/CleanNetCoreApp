@@ -1,12 +1,12 @@
-﻿using CleanApp.Application.Abstractions;
-using CleanApp.Domain.Abstractions;
-using CleanApp.Domain.Models;
+﻿using $ext_safeprojectname$.Application.Abstractions;
+using $ext_safeprojectname$.Domain.Abstractions;
+using $ext_safeprojectname$.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanApp.Application.Services
+namespace $ext_safeprojectname$.Application.Services
 {
     public class TodoService : ITodoService
     {

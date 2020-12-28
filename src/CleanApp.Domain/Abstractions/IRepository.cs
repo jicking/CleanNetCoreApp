@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanApp.Domain.Abstractions
+namespace $ext_safeprojectname$.Domain.Abstractions
 {
     public interface IRepository<TModel>
     {

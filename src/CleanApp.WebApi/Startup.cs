@@ -1,5 +1,5 @@
-using CleanApp.Data.EF;
-using CleanApp.IOC;
+using $ext_safeprojectname$.Data.EF;
+using $ext_safeprojectname$.IOC;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace CleanApp.WebApi
+namespace $ext_safeprojectname$.WebApi
 {
     public class Startup
     {
@@ -28,10 +28,10 @@ namespace CleanApp.WebApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanApp.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "$ext_safeprojectname$.WebApi", Version = "v1" });
             });
 
-            services.AddDbContext<CleanAppContext>(options =>
+            services.AddDbContext<$ext_safeprojectname$Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().AddFluentValidation(fv => {
@@ -58,7 +58,7 @@ namespace CleanApp.WebApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CleanApp.WebApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "$ext_safeprojectname$.WebApi v1"));
             }
 
             app.UseHttpsRedirection();

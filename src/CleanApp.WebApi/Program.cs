@@ -1,4 +1,4 @@
-using CleanApp.Data.EF;
+using $ext_safeprojectname$.Data.EF;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanApp.WebApi
+namespace $ext_safeprojectname$.WebApi
 {
     public class Program
     {
@@ -28,7 +28,7 @@ namespace CleanApp.WebApi
             var services = scope.ServiceProvider;
             try
             {
-                var context = services.GetRequiredService<CleanAppContext>();
+                var context = services.GetRequiredService<$ext_safeprojectname$Context>();
                 DbInitializer.Initialize(context);
             }
             catch (Exception ex)

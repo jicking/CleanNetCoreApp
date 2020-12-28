@@ -1,18 +1,18 @@
-﻿using CleanApp.Domain.Abstractions;
-using CleanApp.Domain.Models;
+﻿using $ext_safeprojectname$.Domain.Abstractions;
+using $ext_safeprojectname$.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanApp.Data.EF.Repositories
+namespace $ext_safeprojectname$.Data.EF.Repositories
 {
     public class Repository<TModel> : IRepository<TModel> where TModel : class, IModel, new()
     {
-        readonly CleanAppContext db;
+        readonly $ext_safeprojectname$Context db;
 
-        public Repository(CleanAppContext dbContext) => db = dbContext;
+        public Repository($ext_safeprojectname$Context dbContext) => db = dbContext;
 
 
 

@@ -1,10 +1,10 @@
-﻿using CleanApp.Domain.Models;
+﻿using $ext_safeprojectname$.Domain.Models;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CleanApp.Application.Validators
+namespace $ext_safeprojectname$.Application.Validators
 {
     public class TodoItemValidator: AbstractValidator<TodoItem>
     {

@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanApp.Application\CleanApp.Application.csproj" />
-    <ProjectReference Include="..\CleanApp.Data.EF\CleanApp.Data.EF.csproj" />
+    <ProjectReference Include="..\$ext_safeprojectname$.Application\$ext_safeprojectname$.Application.csproj" />
+    <ProjectReference Include="..\$ext_safeprojectname$.Data.EF\$ext_safeprojectname$.Data.EF.csproj" />
   </ItemGroup>
 
 </Project>

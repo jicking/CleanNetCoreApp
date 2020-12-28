@@ -1,16 +1,16 @@
-﻿using CleanApp.Application.Abstractions;
-using CleanApp.Application.Services;
-using CleanApp.Application.Validators;
-using CleanApp.Data.EF.Repositories;
-using CleanApp.Domain.Abstractions;
-using CleanApp.Domain.Models;
+﻿using $ext_safeprojectname$.Application.Abstractions;
+using $ext_safeprojectname$.Application.Services;
+using $ext_safeprojectname$.Application.Validators;
+using $ext_safeprojectname$.Data.EF.Repositories;
+using $ext_safeprojectname$.Domain.Abstractions;
+using $ext_safeprojectname$.Domain.Models;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CleanApp.IOC
+namespace $ext_safeprojectname$.IOC
 {
     public class DependencyContainer
     {

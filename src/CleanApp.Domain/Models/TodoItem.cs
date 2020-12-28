@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CleanApp.Domain.Models
+namespace $ext_safeprojectname$.Domain.Models
 {
     public class TodoItem : IModel
     {

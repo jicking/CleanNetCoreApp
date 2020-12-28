@@ -1,5 +1,5 @@
-﻿using CleanApp.Application.Abstractions;
-using CleanApp.Domain.Models;
+﻿using $ext_safeprojectname$.Application.Abstractions;
+using $ext_safeprojectname$.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace CleanApp.WebApi.Controllers
+namespace $ext_safeprojectname$.WebApi.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
