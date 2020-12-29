@@ -13,7 +13,7 @@ namespace CleanApp.WebApi
 {
     public class Startup
     {
-        const string CORS_POLICY_ALLOW_ALL = "CORS_POLICY_ALLOW_ALL";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,15 +34,11 @@ namespace CleanApp.WebApi
             services.AddDbContext<CleanAppContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddMvc().AddFluentValidation(fv => {
-                fv.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
-            });
+            services.AddMvc().AddFluentValidation(fv => 
+                fv.RunDefaultMvcValidationAfterFluentValidationExecutes = false);
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: CORS_POLICY_ALLOW_ALL, builder =>
-                                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-            });
+            services.AddCors(options => 
+                options.AddDefaultPolicy(o => o.AllowAnyOrigin()));
 
             RegisterServices(services);
         }
@@ -65,7 +61,7 @@ namespace CleanApp.WebApi
 
             app.UseRouting();
 
-            app.UseCors(CORS_POLICY_ALLOW_ALL);
+            app.UseCors();
 
             app.UseAuthorization();
 
